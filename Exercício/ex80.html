@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista ordenada sem repetições</title>
+</head>
+
+<body>
+      
+    <div id="res"></div>
+
+    <script>
+        
+        
+            let res = document.getElementById('res')
+            let vet = []
+
+            for(let cont = 0; cont < 5; cont++){
+                let num = prompt(`Digite um valor`)
+                
+                vet.push(Number(num))
+                vet.sort()
+
+                if(vet.length == 1 || Number(num) == vet[vet.length -1]){
+                    alert(`Adicionado no final da lista`)
+                }else{
+                    alert(`O valor ${num} foi adicionado na posição ${vet.indexOf(Number(num))}`)
+                }
+
+                res.innerHTML = `Os valores digitados foram ${vet}`
+            }
+            
+            
+    </script>
+</body>
+
+</html>

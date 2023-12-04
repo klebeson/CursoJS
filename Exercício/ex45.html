@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GAME: Pedra Papel e Tesoura</title>
+</head>
+
+<body>
+    Escolha uma opção abaixo: <br><br>
+    [1] - PEDRA <br>
+    [2] - PAPEL <br>
+    [3] - TESOURA <br></br>
+    <input type="number" id="opcao">
+    <input type="button" value="jogar" onclick="jogar()">
+    <div id="res"></div>
+
+    <script>
+
+        function jogar() {
+            let jogador = Number(document.getElementById('opcao').value)
+            let res = document.getElementById('res')
+            let jogadapc = sorteio() + 1
+
+            function nome_jogador() {
+                if (jogador == 1) {
+                    jogador = "PEDRA"
+
+                } else if (jogador == 2) {
+                    jogador = "PAPEL"
+
+                } else if (jogador == 3) {
+                    jogador = "TESOURA"
+                }
+                return (jogador)
+            }
+            function nome_jogadapc() {
+                if (jogadapc == 1) {
+                    jogadapc = "PEDRA"
+
+                } else if (jogadapc == 2) {
+                    jogadapc = "PAPEL"
+
+                } else if (jogadapc == 3) {
+                    jogadapc = "TESOURA"
+
+                }
+                return (jogadapc)
+            }
+          
+            if (jogadapc == 1 && jogador == 3) {
+                res.innerHTML = `O PC escolheu ${nome_jogadapc()} e você escolheu ${nome_jogador()}</br>`
+                res.innerHTML += `O PC ganhou`
+            } else if (jogadapc == 2 && jogador == 1) {
+                res.innerHTML = `O PC escolheu ${nome_jogadapc()} e você escolheu ${nome_jogador()}</br>`
+                res.innerHTML += `O PC ganhou`
+            } else if (jogadapc == 3 && jogador == 2) {
+                res.innerHTML = `O PC escolheu ${nome_jogadapc()} e você escolheu ${nome_jogador()}</br>`
+                res.innerHTML += `O PC ganhou`
+            } else if (jogador == 1 && jogadapc == 3) {
+                res.innerHTML = `O PC escolheu ${nome_jogadapc()} e você escolheu ${nome_jogador()}</br>`
+                res.innerHTML += `Você ganhou`
+            } else if (jogador == 2 && jogadapc == 1) {
+                res.innerHTML = `O PC escolheu ${nome_jogadapc()} e você escolheu ${nome_jogador()}</br>`
+                res.innerHTML += `Você ganhou`
+            } else if (jogador == 1 && jogadapc == 3) {
+                res.innerHTML = `O PC escolheu ${nome_jogadapc()} e você escolheu ${nome_jogador()}</br>`
+                res.innerHTML += `Você ganhou`
+            } else if (jogador == jogadapc) {
+                res.innerHTML = `O PC escolheu ${nome_jogadapc()} e você escolheu ${nome_jogador()}</br>`
+                res.innerHTML += `EMPATE`
+            }else if(jogador > 3 || jogador < 0){
+                alert(`ESCOLHA UMA OPÇÃO VÁLIDA`)
+            }
+
+        }
+        function sorteio() {
+            return Math.floor(Math.random() * 3)
+        }
+
+
+    </script>
+</body>
+
+</html>

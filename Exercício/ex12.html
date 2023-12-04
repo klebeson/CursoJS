@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculando Descontos</title>
+</head>
+<body>
+    Digite o valor do produto <input type="number" id="valor"><br>
+    Digite o valor do produto <input type="number" id="desconto">
+    <input type="button" value="calcular" onclick="calcular()">
+    <div id="res">...</div>
+    <script>
+        function calcular(){
+        var desconto = Number(document.getElementById('desconto').value)/100
+        var v = Number(document.getElementById('valor').value)
+        var res = document.getElementById('res')
+        var des = v-(v * desconto)
+        res.innerHTML = `O novo valor é de ${des}`
+        }
+    </script>
+</body>
+</html>

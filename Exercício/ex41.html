@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classificando Atletas</title>
+</head>
+
+<body>
+    Ano de Nascimento: <input type="number" id="n">
+    <input type="button" value="verificar" onclick="verificar()">
+    <div id="res"></div>
+    <script>
+        function verificar() {
+
+            let ano = Number(document.getElementById('n').value)
+            let res = document.getElementById('res')
+            const data = new Date()
+            let anoAtual = data.getFullYear()
+            let idade = anoAtual - ano
+
+            if (idade >= 0 && idade < 9) {
+                res.innerHTML = `Quem nasceu em ${ano} tem ${idade} anos em ${anoAtual} </br>`
+                res.innerHTML += `MIRIM`
+            } else if (idade > 9 && idade <= 14) {
+                res.innerHTML = `Quem nasceu em ${ano} tem ${idade} anos em ${anoAtual} </br>`
+                res.innerHTML += `INFANTIL`
+            }else if (idade > 14 && idade <= 19) {
+                res.innerHTML = `Quem nasceu em ${ano} tem ${idade} anos em ${anoAtual} </br>`
+                res.innerHTML += `JUNIOR`
+            }else if (idade > 19 && idade <= 25) {
+                res.innerHTML = `Quem nasceu em ${ano} tem ${idade} anos em ${anoAtual} </br>`
+                res.innerHTML += `SÊNIOR`
+            }else if (idade < 0) {
+              alert(`DIGITE UM ANO VÁLIDO`)
+            }else{
+                res.innerHTML = `Quem nasceu em ${ano} tem ${idade} anos em ${anoAtual} </br>`
+                res.innerHTML += `MASTER`
+            }
+
+
+        }
+
+
+
+
+
+    </script>
+</body>
+
+</html>

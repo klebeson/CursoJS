@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dobro, Triplo e Raiz Quadrada</title>
+</head>
+<body>
+    <input id = "n" type="number">
+    <input type="button" value="Calcular" onclick="calcular()">
+    <div id="res"></div>
+
+    <script>
+        function calcular(){
+            var n = Number(window.document.getElementById("n").value)
+            var dobro = Number (2 * n)
+            var triplo = Number (3 * n)
+            var raiz = Number (Math.sqrt(n))
+            var res = document.getElementById('res')
+            
+            res.innerHTML = ` O número digitado é ${n} o dobro dele é ${dobro} seu triplo ${triplo} e sua raiz é ${raiz}`
+        }
+    </script>
+</body>
+</html>

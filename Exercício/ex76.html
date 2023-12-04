@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Preços com Tupla</title>
+</head>
+<body>
+   Digite o nome do produto: <input type="text" id="nome_produto"></br></br>
+   Digite o preço do produto: <input type="number" id="preco_produto">
+   <input type="button" value="adicionar" onclick="lista()">
+   <div id="res"></div>
+
+<script>
+    function lista(){
+        let lista = []
+        let res = document.getElementById('res')
+
+        let lista_produtos = {}
+        lista_produtos.nome_produto = document.querySelector("input#nome_produto").value
+        lista_produtos.preco_produto = document.querySelector("input#preco_produto").value
+
+        lista.push(lista_produtos)
+        document.querySelector("input#nome_produto").value = ""
+        document.querySelector("input#preco_produto").value = ''
+
+        for(idx in lista){
+            res.innerHTML += `${lista[idx].nome_produto}..................R$ ${lista[idx].preco_produto} </br>`
+        }
+        
+
+    }
+</script>
+</body>
+</html>

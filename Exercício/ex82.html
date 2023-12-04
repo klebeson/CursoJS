@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dividindo valores em várias listas</title>
+</head>
+<body>
+    <div id="res"></div>
+
+    <script>
+        let res = document.querySelector('div#res')
+        let vet_completo = []
+        let vet_impar = []
+        let vet_par = []
+
+        do{
+            let num = prompt(`Digite um valor`)
+            vet_completo.push(Number(num))
+            if(Number(num) % 2 == 0){
+                vet_par.push(Number(num))
+            }else{
+                vet_impar.push(Number(num))
+            }
+
+            var escolha = prompt(`Quer continuar [S/N]`)
+        }while(escolha == "S")
+
+        res.innerHTML = `A lista completa é ${vet_completo} </br>
+                         A lista de pares é ${vet_par} </br>
+                         A lista de ímpares é ${vet_impar}`
+    </script>
+</body>
+</html>

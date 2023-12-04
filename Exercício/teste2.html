@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista composta e análise de dados</title>
+</head>
+
+<body>
+    Digite o nome da pessoa: <input type="text" id="nome"></br></br>
+    Digite o peso da pessoa: <input type="number" id="peso">
+    <input type="button" value="adicionar" onclick="adicionar()"></br>
+    <input type="button" value="verificar" onclick="verificar()">
+
+    <div id="res"></div>
+    <div id="res2"></div>
+
+    <script>
+        let res2 = document.getElementById('res2')
+        let res = document.getElementById('res')
+        let nome = document.getElementById('nome')
+        let peso = document.getElementById('peso')
+        let vet_pessoas = []
+        let vet_nome_maior_peso = []
+        let vet_nome_menor_peso = []
+
+
+
+        let cont = 0
+
+        function adicionar() {
+
+            let tes = ''
+            let pessoas = {}
+            cont++
+            pessoas.nome = nome.value
+            pessoas.peso = Number(peso.value)
+            vet_pessoas.push(pessoas)
+
+            for (idx in vet_pessoas) {
+
+                tes += `${vet_pessoas[idx].nome} </br>
+                ${vet_pessoas[idx].peso}</br>`
+
+                res.innerHTML = tes
+            }
+
+        }
+
+
+        function verificar() {
+            let nome_maior_peso = vet_pessoas[0].nome
+            let maior_peso = vet_pessoas[0].peso
+            let nome_menor_peso = vet_pessoas[0].nome
+            let menor_peso = vet_pessoas[0].peso
+
+            let tes_maior = ''
+            let tes_menor = ''
+
+            for (idx in vet_pessoas) {
+
+                if (vet_pessoas[idx].peso > maior_peso) {
+                    vet_nome_maior_peso = []
+                    nome_maior_peso = vet_pessoas[idx].nome
+                    maior_peso = vet_pessoas[idx].peso
+                }
+                if (vet_pessoas[idx].peso < menor_peso) {
+                    vet_nome_menor_peso = []
+                    nome_menor_peso = vet_pessoas[idx].nome
+                    menor_peso = vet_pessoas[idx].peso
+                }
+                if (vet_pessoas[idx].peso == maior_peso) {
+                  
+                    vet_nome_maior_peso.push(vet_pessoas[idx].nome)
+
+                }
+                if (vet_pessoas[idx].peso == menor_peso && vet_nome_maior_peso.indexOf(vet_pessoas[idx].nome) == -1) {
+
+                    vet_nome_menor_peso.push(vet_pessoas[idx].nome)
+                }
+
+            }
+
+            
+            for (ind_maior in vet_nome_maior_peso) {
+                tes_maior += `${vet_nome_maior_peso[ind_maior]} </br>`
+            }
+            for (ind_menor in vet_nome_menor_peso) {
+                tes_menor += `${vet_nome_menor_peso[ind_menor]} </br>`
+            }
+
+
+       if(vet_nome_menor_peso.length == 0){
+          res2.innerHTML = `O menor peso é ${maior_peso} e pertence a ${tes_maior} </br>
+                            O maior peso é ${maior_peso} e pertence a ${tes_maior}`
+        }else{
+            res2.innerHTML = `O menor peso é ${menor_peso} e pertence a ${tes_menor} </br>
+                              O maior peso é ${maior_peso} e pertence a ${tes_maior}` 
+        }
+       }
+          
+
+    </script>
+</body>
+
+</html>

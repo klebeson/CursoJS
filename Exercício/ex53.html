@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detector de Palíndromo</title>
+</head>
+
+<body>
+    Digite uma frase: <input type="text" id="frase">
+    <input type="button" value="verificar" onclick="verificar()">
+    <div id="res"></div>
+
+    <script>
+        function verificar() {
+            let frase = document.querySelector('input#frase').value.replaceAll(" ", "")
+            let frases = frase.split('').reverse().join('')
+
+            if (frase === frases) {
+                res.innerHTML += `${frase} </br>`
+                res.innerHTML += `${frases} </br>`
+                res.innerHTML += `As frases são um palíndromo`
+            }else{
+                res.innerHTML += `${frase} </br>`
+                res.innerHTML += `${frases} </br>`
+                res.innerHTML += `As frases <strong>NÃO</strong> são um palíndromo`
+            }
+
+
+
+
+        }
+    </script>
+
+</body>
+
+</html>

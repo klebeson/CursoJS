@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reajuste Salarial</title>
+</head>
+<body>
+    Qual é o salário do Funcionário  <input type="number" id="salario"><br><br>
+    Quantos por cento de aumento ele teve <input type="number" id="aumento">
+    <input type="button" value="calcular" onclick="calcular()">
+    <div id="res">...</div>
+    <script>
+        function calcular(){
+            var sal = Number(document.getElementById('salario').value)
+            var aum = Number(document.getElementById('aumento').value)
+            var porc = aum/100
+            var novo = Number(sal + (sal*porc))
+            var res = document.getElementById('res')
+            res.innerHTML = `O funcionario ganhava R$${sal} teve um aumento de ${aum}% e seu novo salário é de R$${novo}`
+            
+        }
+    </script>
+</body>
+</html>

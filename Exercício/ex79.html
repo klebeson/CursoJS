@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valores únicos em uma Lista</title>
+</head>
+
+<body>
+    Digite um número: <input type="text" id="num"></br></br>
+    <input type="button" value="adicionar" onclick="adicionar()">
+    <div id="res"></div>
+
+    <script>
+        let num = document.getElementById('num')
+        let res = document.getElementById('res')
+        let vet = []
+
+        function adicionar() {
+            let escolha = prompt(`Gostaria de continuar?`).toLocaleUpperCase()
+            let in_lista = vet.indexOf(Number(num.value))
+            
+            if (escolha == "S" && in_lista == -1) {
+                vet.push(Number(num.value))
+            } if (escolha == "S" && in_lista !== -1) {
+                alert(`Número já adicionado`)
+            } if(escolha == "N"){
+                vet.push(Number(num.value))
+
+                res.innerHTML = ` ${vet.sort()}</br`
+            }
+            document.getElementById('num').value = ""
+        }
+
+    </script>
+</body>
+
+</html>

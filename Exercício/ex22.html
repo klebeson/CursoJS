@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analisador de Dados</title>
+</head>
+
+<body>
+    <input type="text" id="nome">
+    <input type="button" value="Analisar" onclick="Analisar()">
+    <div id="res"></div>
+
+    <script>
+        function Analisar(){
+        var nome = document.getElementById('nome').value
+        var res = document.getElementById('res')
+        var re = ' '
+        var pnome = nome.trim()
+        var novo = pnome.replaceAll(" ","")
+
+        res.innerHTML = ''
+        res.innerHTML+=`Seu nome em maiuscula é ${pnome.toUpperCase()}</br>`
+        res.innerHTML+=`Seu nome em minúscula é ${pnome.toLowerCase()}</br>`
+        res.innerHTML+=`Seu nome possui letras ${pnome.replaceAll(" ",'').length} </br>`
+        res.innerHTML+=`Seu primeiro nome é ${pnome.split(" ",1)}</br>`
+        }
+    </script>
+</body>
+
+</html>

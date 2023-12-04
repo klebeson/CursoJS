@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Média</title>
+</head>
+<body>
+    <input type="number" name="" id="n1"> Digite a primeira nota do aluno 
+    <input type="number" name="" id="n2"> Digite a segunda nota do aluno
+    <input type="button" value="calcular" onclick="calcular()">
+    <div id="res"></div>
+
+    <script>
+
+        function calcular(){
+            var n1 = Number(document.getElementById('n1').value)
+            var n2 = Number(document.getElementById('n2').value)
+            var media = Number((n1+n2)/2)
+            var res = document.getElementById('res')
+            res.innerHTML = media
+
+        }
+    </script>
+</body>
+</html>

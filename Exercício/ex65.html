@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maior e Menor valores</title>
+</head>
+
+<body>
+
+  <div id="res"></div>
+
+  <script>
+
+    let soma = 0
+    let cont = 0
+    let num = []
+   
+
+        let res = document.getElementById('res')
+    do {
+      cont++
+      var n = Number(prompt(`Digite um número`))
+      num.push(n)
+      var sn = prompt(`Deseja continuar [S/N]`).toUpperCase()
+    } while (sn == "S")
+
+    let maior = n
+    let menor = n
+
+    for (let pos in num) {
+
+      soma += num[pos]
+
+      if (num[pos] < menor) {
+        menor = num[pos]
+      } else if (num[pos] > maior) {
+        maior = num[pos]
+      }
+    
+      res.innerHTML = `A média entre os valores foi de ${soma / cont}, o maior valor foi ${maior} e o menor valor foi ${menor}`
+    }
+  </script>
+</body>
+
+</html>

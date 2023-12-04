@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criando um Menu de Opções</title>
+</head>
+
+<body>
+    Primeiro Valor: <input type="number" id="n1"><br><br>
+    Segundo Valor: <input type="number" id="n2"><br><br>
+    [1] Somar <br>
+    [2] Multiplicar <br>
+    [3] Maior <br>
+    [4] Limpar <br>
+    [5] Sair do programa <br><br>
+    <input type="number" id="menu">
+    <input type="button" value="Selecionar" onclick="opcao()">
+    <div id="res"></div>
+
+    <script>
+
+        function opcao() {
+            let n1 = Number(document.querySelector('input#n1').value)
+            let n2 = Number(document.querySelector("input#n2").value)
+            let menu = Number(document.getElementById('menu').value)
+            let res = document.getElementById('res')
+
+            switch (menu) {
+
+                case 1: res.innerHTML = `${n1} + ${n2} = ${n1 + n2}`
+                    break;
+
+                case 2: res.innerHTML = `${n1} X ${n2} = ${n1 * n2}`
+                    break;
+
+                case 3: if (n1 > n2) {
+
+                    res.innerHTML = `${n1} é maior que ${n2}`
+
+                } else if (n2 > n1) {
+                    res.innerHTML = `${n2} é maior que ${n1}`
+                } else {
+                    res.innerHTML = `Os números são iguais`
+                }
+                    break;
+
+                case 4:
+
+                    document.querySelector('input#n1').value = ''
+                    document.querySelector("input#n2").value = ''
+                    document.getElementById('menu').value = ''
+                    res.innerHTML = ""
+
+
+                    break;
+
+                case 5:
+                    alert(`Obrigado por utilizar nossa plataforma`)
+                    document.querySelector('input#n1').value = ''
+                    document.querySelector("input#n2").value = ''
+                    document.getElementById('menu').value = ''
+                    break;
+
+                default:
+                    alert("[ERRO] opção inválida")
+
+            }
+
+        }
+    </script>
+
+
+
+</body>
+
+</html>

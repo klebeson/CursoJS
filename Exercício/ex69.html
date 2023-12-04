@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Análise de dados do grupo</title>
+</head>
+
+<body>
+  Digite a idade da pessoa: <input type="text" id="idade"></br></br>
+  Digite o sexo da pessoa:[M/F] <input type="text" id="sexo">
+  <input type="button" value="Adicionar" onclick="adicionar()"></br></br>
+  <input type="button" value="Verificar" onclick="verificar()">
+  <div id="res"></div>
+
+  <script>
+    let idade = document.querySelector('input#idade')
+    let sexo = document.querySelector('input#sexo')
+    let res = document.getElementById('res')
+    let pessoas = []
+
+    let pessoa = {}
+
+
+
+    function teste() {
+
+      document.querySelector("input#idade").value = ""
+      document.querySelector('input#sexo').value = ""
+    }
+
+    function verificar() {
+
+      let cont_mulher = 0
+      let cont_homem = 0
+      let cont_idade = 0
+      let tot_mulher_vinte = 0
+
+      for (idx in pessoas) {
+
+        if (pessoas[idx].sexo == "M") {
+          cont_homem++
+        } if (pessoas[idx].sexo == "F") {
+          cont_mulher++
+        } if (pessoas[idx].idade > 18) {
+          cont_idade++
+        }if (pessoas[idx].idade > 18 && pessoas[idx].sexo == "M" ) {
+          tot_mulher_vinte++
+        }
+      }
+
+      res.innerHTML = `Total de pessoas com mais de 18 anos ${cont_idade} </br> Ao todo temos ${cont_homem} homens cadastrados </br> E temos ${tot_mulher_vinte} mulher com menos de 20 anos `
+
+    }
+
+    function adicionar() {
+
+      let pessoa = {}
+      pessoa.idade = Number(document.getElementById('idade').value)
+      pessoa.sexo = document.getElementById('sexo').value.toUpperCase()
+
+      pessoas.push(pessoa)
+
+      let opcao = prompt(`Deseja Continuar?`)
+
+
+      if (opcao == "S") {
+        teste()
+      } else {
+        verificar()
+      }
+
+    }
+
+
+  </script>
+</body>
+
+</html>

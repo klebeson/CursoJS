@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grupo da Maioridade</title>
+</head>
+
+<body>
+    Adicione as idades a serem analisadas <input type="number" id="idade">
+    <input type="button" value="Adicionar" onclick="adicionar()"><br>
+    <input type="button" value="VERIFICAR" onclick="verificar()"><br>
+    <div id="res"></div>
+    <div id="ret"></div>
+
+    <script>
+        let res = document.querySelector('div#res')
+        let idade = document.querySelector('input#idade')
+        let vet = []
+        const ano = new Date()
+        let anoAtual = ano.getFullYear()
+        contMaior = 0
+        contMenor = 0
+
+
+        function adicionar() {
+
+            if (Number(idade.value)> anoAtual || Number(idade.value) <= 0 || Number(idade.value) == "") {
+                alert(`Digite um valor válido`)
+            } else {
+                vet.push(Number(idade.value))
+                ret.innerHTML = vet
+            }
+
+
+        }
+
+
+        function verificar() {
+            for (let pos in vet) {
+                if (anoAtual - vet[pos] >= 18) {
+                    contMaior++
+                } else {
+                    contMenor++
+                }
+            }
+            res.innerHTML += ` Existem ${contMaior} pessoas de maior</br>`
+            res.innerHTML += ` Existem ${contMenor} pessoas de menor`
+
+        }
+
+    </script>
+
+</body>
+
+</html>

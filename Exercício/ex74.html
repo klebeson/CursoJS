@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maior e menor valores em Tupla</title>
+</head>
+
+<body>
+  <div id="res"></div>
+
+  <script>
+    let res = document.getElementById('res')
+    let vet = []
+
+    for(let cont = 0;cont < 5; cont++){
+      let num_sorteados = Math.floor(Math.random() * 9)
+      vet.push(num_sorteados)
+    }
+    let vet_maior = vet[0]
+    let vet_menor = vet[1]
+
+    for (idx in vet) {
+
+      if (vet[idx] > vet_maior) {
+        vet_maior = vet[idx]
+      } else if (vet[idx] < vet_menor) {
+        vet_menor = vet[idx]
+      }
+
+    }
+
+    res.innerHTML = ` Os números sorteados foram: ${vet}</br>
+                      O menor número sorteado foi: ${vet_menor}</br>
+                      O maior número sorteado foi:${vet_maior}`
+
+  </script>
+</body>
+
+</html>

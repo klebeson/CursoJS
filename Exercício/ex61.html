@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progressão Aritmética v2.0</title>
+</head>
+
+<body>
+    Primeiro Termo: <input type="number" id="termo"><br><br>
+    Razão PA: <input type="number" id="razao"><br><br><br>
+    <input type="button" value="Calcular" onclick="calcular()">
+    <div id="res"></div>
+</body>
+
+<script>
+
+    function calcular() {
+        let n = Number(document.getElementById('termo').value)
+        let termo = Number(document.getElementById('termo').value)
+        let razao = Number(document.querySelector('input#razao').value)
+        let res = document.getElementById('res')
+        let cont = 1
+        res.innerHTML += `${n} </br>`
+
+
+        while (cont < 10) {
+
+            termo = termo + razao
+            
+            res.innerHTML += ` ${termo}</br>`
+           
+            cont++
+        }
+       
+        res.innerHTML += ` FIM </br>`
+
+    }
+</script>
+
+</html>

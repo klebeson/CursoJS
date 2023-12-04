@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="res"></div>
+
+    <script>
+
+        let res = document.querySelector('div#res')
+        let vet_num = []
+        let idx_maior = []
+        let idx_menor = []
+        let maior = []
+        let menor = []
+        let aux = []
+        for (let cont = 0; cont < 5; cont++) {
+            let num = prompt(`Digite um número para posição ${cont}`)
+            vet_num.push(Number(num))
+
+        }
+    
+        let num_maior = vet_num[0]
+        let num_menor = vet_num[0]
+
+        for (idx in vet_num) {
+
+            if (vet_num[idx] == num_maior) {
+
+                maior.push(idx)
+
+            }
+
+            if (vet_num[idx] == num_menor) {
+
+                menor.push(idx)
+
+            }
+
+            if (vet_num[idx] > num_maior) {
+                maior = []
+                num_maior = vet_num[idx]
+                maior[0] = idx
+
+            } if (vet_num[idx] < num_menor) {
+                menor = []
+                num_menor = vet_num[idx]
+                menor[0] = idx
+            }
+           
+            
+        }
+
+        res.innerHTML = `Você digitou os valores: ${vet_num} </br>
+                         O maior valor digitado foi ${num_maior} nas posições ${maior} </br>
+                         O menos valor digitado foi ${num_menor} nas posições ${menor} </br>`
+
+    </script>
+</body>
+
+</html>

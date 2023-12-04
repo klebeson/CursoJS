@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorteando um item na lista</title>
+</head>
+
+<body>
+    Primeiro aluno: <input type="text" id="n1"> <br><br>
+    Segundo aluno: <input type="text" id="n2"> <br><br>
+    Terceiro aluno: <input type="text" id="n3"> <br><br>
+    Quarto aluno: <input type="text" id="n4"> <br><br>
+    <input type="button" value="Sortear" onclick="sortear()">
+    <div id="res"></div>
+
+    <script>
+        const QTDALUNOS = 4
+        function sortear() {
+            var sorteados = []
+            var res = document.getElementById('res')
+            var n1 = document.getElementById('n1').value
+            var n2 = document.getElementById('n2').value
+            var n3 = document.getElementById('n3').value
+            var n4 = document.getElementById('n4').value
+            
+            sorteados.push(n1,n2,n3,n4)
+            res.innerHTML = 'O aluno sorteado foi ' + sorteados[sorteio()]
+
+        }
+
+        function sorteio() {
+            return Math.floor(Math.random() * QTDALUNOS);
+        }
+    </script>
+</body>
+
+</html>

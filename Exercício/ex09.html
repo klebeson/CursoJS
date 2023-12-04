@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada</title>
+</head>
+<body>
+    <input id="num" type="number">
+    <input type="button" value="Calcular" onclick="Calcular()">
+    <div id="res"></div>
+
+    <script>
+        function Calcular(){
+            var res = document.getElementById("res")
+            var n = Number(document.getElementById("num").value)
+            var tes = ''
+        
+        
+            for(var cont = 1; cont <= 10; cont++){
+                tes += `${n} X ${cont} = ${n*cont} </br>`
+                
+        }
+            res.innerHTML = tes 
+        }
+    </script>
+</body>
+</html>

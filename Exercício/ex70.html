@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estatísticas em Produtos</title>
+</head>
+
+<body>
+  Digite o nome do produto: <input type="text" id="idade"></br></br>
+  Digite o preço do produto: <input type="number" id="preco">
+  <input type="button" value="Adicionar" onclick="adicionar()"></br></br>
+  <input type="button" value="Verificar" onclick="verificar()">
+  <div id="res"></div>
+
+  <script>
+    let idade = document.querySelector('input#idade')
+    let preco = document.querySelector('input#preco')
+    let res = document.getElementById('res')
+    let pessoas = []
+
+    let pessoa = {}
+
+
+
+    function teste() {
+
+      document.querySelector("input#idade").value = ""
+      document.querySelector('input#preco').value = ""
+    }
+
+    function verificar() {
+
+      let tot_preco = 0
+      let preco_mil = 0
+      let prec_menor = pessoas[0].preco
+      let prec_menornome = ""
+
+
+      for (let idx = 0; idx < pessoas.length; idx++) {
+
+        tot_preco += pessoas[idx].preco
+
+        if (pessoas[idx].preco > 1000) {
+          preco_mil++
+
+        } if (pessoas[idx].preco < prec_menor) {
+          prec_menor = pessoas[idx].preco
+          prec_menornome = pessoas[idx].nome
+        }
+
+
+      }
+
+      res.innerHTML = `O total gasto foi de ${tot_preco}</br>
+                      ${preco_mil} custam mais de R$1.000,00</br>
+                       O produto mais barato foi ${prec_menornome}</br>`
+
+    }
+
+    function adicionar() {
+
+      let pessoa = {}
+      pessoa.nome = document.getElementById('idade').value
+      pessoa.preco = Number(document.getElementById('preco').value)
+
+      pessoas.push(pessoa)
+
+      let opcao = prompt(`Deseja Continuar?`).toUpperCase()
+
+
+      if (opcao == "S") {
+        teste()
+      } else {
+        verificar()
+      }
+
+    }
+
+
+  </script>
+</body>
+
+</html>

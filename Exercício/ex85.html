@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listas com pares e ímpares</title>
+</head>
+
+<body>
+    Digite um número: <input type="number" id="num">
+    <input type="button" value="Adicionar" onclick="adicionar()"></br>
+    <input type="button" value="Verificar" onclick="verificar()">
+    <div id="res"></div>
+    <div id="res2"></div>
+
+    <script>
+        let num = document.getElementById('num')
+        let res = document.querySelector("div#res")
+        let res2 = document.querySelector("div#res2")
+        let vet_num = []
+
+
+        function adicionar() {
+            vet_num.push(Number(num.value))
+            res.innerHTML = vet_num
+            document.getElementById('num').value = ''
+            
+        }
+
+
+        function verificar() {
+            let vet_num_par = []
+            let vet_num_impar = []
+
+            for (let idx in vet_num) {
+
+                if (vet_num[idx] % 2 == 0) {
+                    vet_num_par.push(vet_num[idx])
+                } else {
+                    vet_num_impar.push(vet_num[idx])
+                }
+            }
+            res2.innerHTML = `Os números pares são ${vet_num_par} </br>
+                          Os números ímpares são ${vet_num_impar} </br>`
+        }
+
+    </script>
+</body>
+
+</html>

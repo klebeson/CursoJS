@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Número por Extenso</title>
+</head>
+<body>
+    Digite um número entre 0 e 20: <input type="number" id="n"> </br></br>
+    <input type="button" value="Escrever" onclick="escrever()">
+    <div id="res"></div>
+
+    <script>
+        function escrever(){
+            let n = Number(document.querySelector("input#n").value)
+            let res = document.getElementById('res')
+            let extenso = ["zero","um","dois","três","quatro","cinco",
+            "seis","sete","oito","nove","dez","onze","doze","treze",
+            "catorze","quinze","dezeseis","dezesete","dezoito","dezenove","vinte"]
+            let numero_extenso = extenso[n]
+            
+            if(n > 20 || n < 0){
+                alert(`Tente novamente. Digite um número entre 0 e 20`)
+            }else{
+                res.innerHTML = `${numero_extenso}`
+            }
+
+
+        }
+    </script>
+
+
+
+</body>
+</html>

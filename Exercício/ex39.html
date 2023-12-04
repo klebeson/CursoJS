@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alistamento Militar</title>
+</head>
+
+<body>
+    Selecione qual seu sexo: <br> 1 - Masculino <br> 2 - Feminino <br> <input type="number" id="sexo"><br><br>
+    Ano de Nascimento: <input type="number" id="n">
+    <input type="button" value="verificar" onclick="verificar()">
+    <div id="res"></div>
+    <script>
+        function verificar() {
+            var sexo = Number(document.getElementById('sexo').value)
+            let ano = Number(document.getElementById('n').value)
+            let res = document.getElementById('res')
+            const data = new Date()
+            let anoAtual = data.getFullYear()
+            let idade = anoAtual - ano
+            let alist = ano - (anoAtual - 18)
+            let ano_alist = anoAtual + alist
+
+            if (sexo == 1) {
+                if (idade < 18) {
+                    res.innerHTML = `Quem nasceu em ${ano} tem ${idade} anos em ${anoAtual} </br>`
+                    res.innerHTML += `Ainda faltam ${18 - idade} anos para seu alistamento </br>`
+                    res.innerHTML += `Seu alistamento será em ${ano + 18} </br>`
+                } else if (idade > 18) {
+                    res.innerHTML = `Quem nasceu em ${ano} tem ${idade} anos em ${anoAtual} </br>`
+                    res.innerHTML += `Você já deveria ter se alistado há ${idade - 18} anos </br>`
+                    res.innerHTML += `Seu alistamento foi ${ano + 18} </br>`
+                } else {
+                    res.innerHTML = `Quem nasceu em ${ano} tem ${idade} anos em ${anoAtual} </br>`
+                    res.innerHTML += `Você deve se alistar IMEDIATAMENTE`
+                }
+            } else {
+                alert("Alistamento não obrigatório")
+            }
+
+        }
+
+
+
+
+
+    </script>
+</body>
+
+</html>

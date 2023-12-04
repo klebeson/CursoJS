@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Maior e menor da sequência</title>
+</head>
+
+<body>
+    Digite o peso da pessoa: <input type="number" id="peso">
+    <input type="button" value="adicionar" onclick="adicionar()"><br><br>
+    <input type="button" value="verificar" onclick="verificar()">
+    <div id="res"></div>
+    <div id="ret"></div>
+
+    <script>
+        let peso = document.getElementById('peso')
+        let res = document.querySelector('div#res')
+        let ret = document.querySelector('div#ret')
+        let vet = []
+        let menor = 99999999999999999999
+        let maior = Number(peso.value)
+
+
+
+        function adicionar() {
+
+            vet.push(Number(peso.value))
+            ret.innerHTML = vet
+            peso.value = ""
+            peso.focus()
+
+        }
+
+        function verificar() {
+
+
+            for (let pos in vet) {
+
+
+                if (vet[pos] < menor) {
+                    menor = vet[pos]
+                } else if (vet[pos] > maior) {
+                    maior = vet[pos]
+                }
+            }
+            res.innerHTML += `O maior valor encontrado foi ${maior} </br>`
+            res.innerHTML += `O menor valor encontrado foi ${menor}`
+        }
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculo de fatorial</title>
+</head>
+
+<body>
+    <input id="num" type="number">
+    <input type="button" value="Calcular" onclick="Calcular()">
+    <div id="res"></div>
+
+    <script>
+        function Calcular() {
+            var res = document.getElementById("res")
+            var n = Number(document.getElementById("num").value)
+            var resultado = 1
+            var tes = ""
+            
+
+
+            for (var cont = n; cont > 0; cont--) {
+                resultado *= cont
+                tes+=`${cont} X `
+
+            }
+            
+
+            res.innerHTML = `${n}! = ${tes.substr(0, tes.lastIndexOf("X"))} = ${resultado}`
+        }
+    </script>
+</body>
+
+</html>

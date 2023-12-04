@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ano Bissexto</title>
+</head>
+
+<body>
+    Digite o ano que será analisado ou <br> Caso queira analisar o ano atual digite 0 <input type="number" id="ano">
+    <br>
+    <input type="button" value="analisar" onclick="analisar()">
+    <div id="res"></div>
+
+
+    <script>
+        function analisar() {
+            const dataAtual = new Date()
+            const anoAtual = dataAtual.getFullYear()
+            let ano = Number(document.getElementById('ano').value)
+            let res = document.getElementById('res')
+
+            if (ano != 0) {
+
+                if (ano % 4 == 0 && ano % 100 !== 0 || ano % 400 == 0) {
+                    res.innerHTML = `O ano ${ano} é Bissexto`
+                } else {
+                    res.innerHTML = `O ano ${ano} NÃO é Bissexto`
+                }
+            } else {
+                if (anoAtual % 4 == 0 && anoAtual % 100 !== 0 || anoAtual % 400 == 0) {
+                    res.innerHTML = `O ano ${anoAtual} é Bissexto`
+                } else {
+                    res.innerHTML = `O ano ${anoAtual} NÃO é Bissexto`
+                }
+            }
+
+
+        }
+    </script>
+</body>
+
+</html>

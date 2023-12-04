@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de medidas</title>
+</head>
+<body>
+    <input id = "num"type="number">
+    <input type="button" value="Converter" onclick="converter()">
+    <div id="res"></div>
+
+    <script>
+        function converter(){
+            var n = Number(window.document.getElementById("num").value)
+            var res  = document.getElementById("res")
+            var km = Number(n / 1000)
+            var hm = Number(n / 100)
+            var dam = Number(n /10)
+            var dm = Number(n*10)
+            var cm = Number(n*100)
+            var mm = Number(n*1000)
+            res.innerHTML = `O valor ${n} vale:</br> </br>${km}km </br>${hm}hm</br> ${dam}dam</br> ${dm}dm</br> ${cm}cm </br>    ${mm}mm`
+           
+        }
+    </script>
+</body>
+</html>

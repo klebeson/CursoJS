@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extraindo dados de uma Lista</title>
+</head>
+
+<body>
+    <div id="res"></div>
+
+    <script>
+        var vet = []
+        let res = document.getElementById('res')
+        let cont = 0
+
+        do {
+            cont++
+            let num = (prompt(`Digite um valor`))
+            vet.push(Number(num))
+            var escolha = prompt(`Quer continuar? [S/N]`)
+
+        } while (escolha == "S")
+
+        let vet_decrescente = vet.sort(function (a, b) {
+            return b -a;
+        })
+
+        if (vet.indexOf(5) == -1) {
+            res.innerHTML = `Você Digitou ${cont} elementos </br>
+                        Os valores em ordem decrescente são ${vet_decrescente} </br>
+                        O valor 5 não apareceu na lista!`
+        } else {
+            res.innerHTML = `Você Digitou ${cont} elementos </br>
+                        Os valores em ordem decrescente são ${vet_decrescente} </br>
+                        O valor 5 faz parte da lista!`
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Caixa Eletrônico</title>
+</head>
+
+<body>
+    Digite o valor que deseja sacar: <input type="number" id="valor"></br></br>
+    <input type="button" value="SACAR" onclick="sacar()">
+    <div id="res"></div>
+
+    <script>
+
+        function sacar() {
+            let valor = Number(document.getElementById('valor').value)
+            let res = document.getElementById('res')
+            let cont_50 = 0
+            let cont_20 = 0
+            let cont_10 = 0
+            let cont_1 = 0
+
+            if (valor == 0) {
+
+                alert("Digite um valor para realizar o saque")
+            } else {
+                while (valor > 0) {
+
+                    if (valor >= 50) {
+                        cont_50++
+                        valor = valor - 50
+                    } else if (valor >= 20) {
+                        cont_20++
+                        valor = valor - 20
+                    } else if (valor >= 10) {
+                        cont_10++
+                        valor = valor - 10
+                    } else if (valor >= 1) {
+                        cont_1++
+                        valor = valor - 1
+                    }
+                }
+            }
+            if (cont_1 == 0 && cont_10 == 0 && cont_20 == 0 && cont_50 > 0) {
+                res.innerHTML = `Foram entregues:
+                </br> ${cont_50} de R$50,00`
+                
+            } else if (cont_1 == 0 && cont_10 == 0 && cont_20 > 0 && cont_50 == 0) {
+                res.innerHTML = `Foram entregues
+                </br> ${cont_20} de R$20,00`
+                
+            } else if (cont_1 == 0 && cont_10 > 0 && cont_20 == 0 && cont_50 == 0) {
+                res.innerHTML = `Foram entregues
+                </br> ${cont_10} de R$10,00`
+              
+            } else if (cont_1 > 0 && cont_10 == 0 && cont_20 == 0 && cont_50 == 0) {
+                res.innerHTML = `Foram entregues
+                </br> ${cont_1} de R$1,00`
+ 
+            } else if (cont_1 == 0 && cont_10 > 0 && cont_20 > 0 && cont_50 > 0) {
+                res.innerHTML = `Foram entregues:
+                </br> ${cont_50} de R$50,00
+                </br> ${cont_20} de R$20,00 
+                </br> ${cont_10} de R$10,00`
+                
+            } else if (cont_1 > 0 && cont_10 > 0 && cont_20 == 0 && cont_50 > 0) {
+                res.innerHTML = `Foram entregues:
+                </br> ${cont_50} de R$50,00
+                </br> ${cont_10} de R$10,00 
+                </br> ${cont_1} de R$1,00`
+               
+            } else if (cont_1 > 0 && cont_10 == 0 && cont_20 > 0 && cont_50 > 0) {
+                res.innerHTML = `Foram entregues:
+                </br> ${cont_50} de R$50,00
+                </br> ${cont_1} de R$1,00 
+                </br> ${cont_20} de R$20,00`
+               
+            } else if (cont_1 == 0 && cont_10 == 0 && cont_20 > 0 && cont_50 > 0) {
+                res.innerHTML = `Foram entregues:
+                </br> ${cont_50} de R$50,00
+                </br> ${cont_20} de R$20,00`
+               
+            } else if (cont_1 == 0 && cont_10 > 0 && cont_20 == 0 && cont_50 > 0) {
+                res.innerHTML = `Foram entregues:
+                </br> ${cont_50} de R$50,00
+                </br> ${cont_10} de R$10,00`
+               
+            }else if (cont_1 > 0 && cont_10 == 0 && cont_20 == 0 && cont_50 > 0) {
+                res.innerHTML = `Foram entregues:
+                </br> ${cont_50} de R$50,00
+                </br> ${cont_1} de R$1,00`
+                
+            }else if (cont_1 > 0 && cont_10 > 0 && cont_20 > 0 && cont_50 == 0) {
+                res.innerHTML = `Foram entregues:
+                </br> ${cont_20} de R$20,00
+                </br> ${cont_10} de R$10,00 
+                </br> ${cont_1} de R$1,00`
+               
+            }else if (cont_1 == 0 && cont_10 > 0 && cont_20 > 0 && cont_50 == 0) {
+                res.innerHTML = `Foram entregues:
+                </br> ${cont_20} de R$20,00
+                </br> ${cont_10} de R$10,00`
+                
+            }else if (cont_1 > 0 && cont_10 == 0 && cont_20 > 0 && cont_50 == 0) {
+                res.innerHTML = `Foram entregues:
+                </br> ${cont_20} de R$20,00
+                </br> ${cont_1} de R$1,00`
+                
+            }else if (cont_1 > 0 && cont_10 > 0 && cont_20 == 0 && cont_50 == 0) {
+                res.innerHTML = `Foram entregues:
+                </br> ${cont_10} de R$10,00
+                </br> ${cont_1} de R$1,00`
+                
+            }else if(cont_1 == 0 && cont_10 == 0 && cont_20 == 0 && cont_50 == 0){
+                document.getElementById('valor').value = ""
+                res.innerHTML = ""
+            }else {
+                res.innerHTML = `Foram entregues:
+                </br> ${cont_50} de R$50,00
+                </br> ${cont_20} de R$20,00 
+                </br> ${cont_10} de R$10,00 
+                </br> ${cont_1} de R$1,00 </br>`
+            }
+
+        }
+
+
+       
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

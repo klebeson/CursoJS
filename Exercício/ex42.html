@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analisando Triângulo v1.0</title>
+</head>
+
+<body>
+    Digite o primeiro lado: <input type="number" id="l1"><br><br>
+    Digite o segundo lado: <input type="number" id="l2"><br><br>
+    Digite o terceiro lado: <input type="number" id="l3"><br><br>
+    <input type="button" value="verificar" onclick="verificar()">
+    <div id="res"></div>
+    <script>
+        function verificar() {
+            let l1 = Number(document.getElementById('l1').value)
+            let l2 = Number(document.getElementById('l2').value)
+            let l3 = Number(document.getElementById('l3').value)
+            let res = document.getElementById('res')
+
+            if (l1 + l2 > l3 && l2 + l3 > l1 && l3 + l1 > l2) {
+                if (l1 != l2 && l2 != l3 && l3 != l1) {
+                    res.innerHTML = `As medidas ${l1} ; ${l2} e ${l3} podem formar um triângulo ESCALENO`
+                } else if (l1 == l2 && l2 == l3 && l3 == l1) {
+                    res.innerHTML = `As medidas ${l1} ; ${l2} e ${l3} podem formar um triângulo EQUILÁTERO`
+                } else if (l1 == l2 || l2 == l3 || l3 == l1) {
+                    res.innerHTML = `As medidas ${l1} ; ${l2} e ${l3} podem formar um triângulo ISÓSCELES`
+                }
+
+            } else {
+                res.innerHTML = `As medidas ${l1} ; ${l2} e  ${l3} NÃO formam um triângulo`
+            }
+
+
+        }
+    </script>
+</body>
+
+</html>

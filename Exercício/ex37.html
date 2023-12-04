@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Bases Numéricas</title>
+</head>
+
+<body>
+
+    <p>Digite a opção desejada abaixo:</p> <br>
+
+    1 - para Binário <br>
+    2- para Octal <br>
+    3- para Hexadecimal <br><br>
+    <input type="number" id="n"><br><br>
+
+    Digite o valor que deseja converter <input type="number" id="n1">
+    <input type="button" value="calcular" onclick="calcular()">
+
+    <div id="res"></div>
+
+    <script>
+
+        function calcular() {
+            let opcao = Number(document.getElementById('n').value)
+            let n1 = Number(document.getElementById('n1').value)
+            let res = document.getElementById('res')
+
+
+            switch (opcao) {
+                case 1:
+                    res.innerHTML = `${n1.toString(2)}`
+                    break
+                case 2:
+                res.innerHTML = `${n1.toString(8)}`
+                    break
+                case 3:
+                    res.innerHTML =  res.innerHTML = `${n1.toString(16)}`
+                    break
+                default: alert(`opção inválida você digitou ${opcao}`)
+            }
+        }
+    </script>
+</body>
+
+</html>

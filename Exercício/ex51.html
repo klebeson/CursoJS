@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progressão Aritmética</title>
+</head>
+
+<body>
+   Primeiro Termo: <input id="num1" type="number"><br><br>
+   Razão: <input id="num2" type="number">
+    <input type="button" value="iniciar" onclick="iniciar()">
+    <div id="res">.....</div>
+
+    <script>
+        function iniciar() {
+            var n1 = Number(window.document.getElementById('num1').value)
+            var numero1 = Number(window.document.getElementById('num1').value)
+            var n2 = window.document.getElementById('num2')
+            var numero2 = Number(n2.value)
+            let res = document.getElementById('res')
+            var tes = ''
+            res.innerHTML = `${n1}</br>`
+            
+            
+            var fim = 0
+
+            for (var contador = 0; contador < 9; contador++) {
+                numero1 = numero1 + numero2
+                tes += `${numero1} </br>`
+            }
+
+
+            res.innerHTML +=` ${tes}`
+            res.innerHTML +=` Acabou`
+        }
+    </script>
+</body>
+
+</html>

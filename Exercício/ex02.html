@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Respondendo ao usuário</title>
+</head>
+<body>
+    <input id = "nome" type="text" >
+    <input type="button" value="Clicar" onclick="clicou()">
+
+    <script>
+        function clicou(){
+            var nome = window.document.getElementById("nome").value
+            window.alert(`É um prazer te conhecer ${nome}`)
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificando as primeiras letras de um texto</title>
+</head>
+
+<body>
+    Digite a cidade onde você nasceu <input type="text" id="cit">
+    <input type="button" value="Verificar" onclick="verificar()">
+    <div id="res"></div>
+
+    <script>
+
+        function verificar() {
+
+            var cit = document.getElementById('cit').value
+            var res = document.getElementById('res')
+            var city = cit.toUpperCase().trim().split(" ",1)
+
+            if (city == 'SANTO'){
+
+                   res.innerHTML = 'True'
+            }else{
+                res.innerHTML = 'False'
+            }
+
+         
+        }
+    </script>
+</body>
+
+</html>

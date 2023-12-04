@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vários números com flag</title>
+</head>
+
+<body>
+  <div id="res"></div>
+
+  <script>
+    let res = document.querySelector("div#res")
+    let valor = []
+    let soma = 0
+    let cont = 0
+    var n = 0
+    let teste = n
+
+
+    do {
+      
+      var n = Number(prompt(`Digite um valor [999 para parar]`))
+      cont++
+      valor.push(n)
+ 
+for (pos in valor) {
+        soma += valor[pos]
+      }
+     
+
+    } while (n != "999")
+
+    res.innerHTML = `foram adicionados ${cont-1} números e a soma entre eles é ${soma - 999}`
+
+  
+  </script>
+</body>
+
+
+</html>

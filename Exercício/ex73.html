@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tuplas com Times de Futebol</title>
+</head>
+
+<body>
+    <input type="button" value="Mostrar">
+    <div id="res"></div>
+
+
+    <script>
+        let times = ["Palmeiras", "Flamengo", "Cruzeiro", "Internacional", "Chapecoense", "Corinthians", "Athletico-PR", "Atlético", "Fortaleza", "São Paulo", "América", "Botafogo", "Santos", "Goiás", "Red Bull Bragantino", "Coritiba", "Cuiabá", "Grêmio", "Vasco", "Bahia"]
+       
+        let res = document.getElementById('res')
+        let res2 = document.getElementById('res2')
+        let tes = ''
+        let aux = times.indexOf('Chapecoense')
+        
+        for (idx in times) {
+            if (idx < 5) {
+                tes+= `${times[idx]},`
+            }
+
+            }
+            res.innerHTML = ` Os 5 primeiros são: ${tes.substr(0,tes.lastIndexOf(','))}</br></br>
+                               Os 4 últimos são: ${times.slice(16)}</br></br>
+                               Times em ordem alfabética: ${times.sort()}</br></br>
+                               O Chapecoense está em ${aux + 1}º lugar`
+                              
+                              
+            
+    </script>
+</body>
+
+</html>

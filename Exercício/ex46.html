@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cronômetro</title>
+</head>
+
+<body>
+    <div id="timer"></div>
+    <div id="res"></div>
+
+    <script>
+        function startTimer(durantion, display) {
+
+            var timer = durantion, minutes, seconds;
+
+            setInterval(function () {
+
+
+                seconds = parseInt(timer % 60, 10);
+
+
+                seconds = seconds < 10 ? "0" + seconds : seconds
+
+                display.textContent = seconds;
+
+                if (timer == 0) {
+                    res.innerHTML += `Boommmmm </br>`
+                } else if (--timer < 0) {
+                    timer = durantion;
+                }
+
+
+            }, 1000)
+        }
+
+        window.onload = function () {
+
+
+            var durantion = 10
+            var display = document.querySelector("#timer"); //Elemento para exibir timer
+            var disparar = durantion.value
+            let res = document.getElementById('res')
+
+
+            startTimer(durantion, display) // Inica a função
+
+
+
+        }
+
+    </script>
+</body>
+
+</html>

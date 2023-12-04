@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análise de dados em uma Tupla</title>
+</head>
+
+<body>
+    <div id="res"></div>
+
+    <script>
+        let res = document.getElementById('res')
+        let vetor = []
+        let vetor_pares = []
+        let vetor_pos_3 = []
+        let cont_9 = 0
+        let cont_pos_3 = ""
+      
+
+        for (let cont = 0; cont < 4; cont++) {
+            let n = Number(prompt(`Digite um número`))
+            vetor.push(n)
+        }
+
+        for (idx in vetor) {
+            if (vetor[idx] == 9) {
+                cont_9++
+            } if (vetor[idx] == 3) {
+               vetor_pos_3.push(idx)
+                cont_pos_3 = Number(vetor_pos_3[0]) + 1
+            } if (vetor[idx] % 2 == 0) {
+                vetor_pares.push(vetor[idx])
+            }
+        }
+        if(vetor_pos_3.length == 0){
+            res.innerHTML = `Os números adicionados foram ${vetor}</br>
+                         O número 9 apareceu ${cont_9} vezes </br>
+                         O número 3 não apareceu na amostra </br>
+                         Os valores pares foram: ${vetor_pares} </br>
+                         ${vetor_pos_3}`
+          }
+          if(vetor_pares.length != 0 && vetor_pares.length == 0 ){
+            res.innerHTML = `Os números adicionados foram ${vetor}</br>
+                         O número 9 apareceu ${cont_9} vezes </br>
+                         O número 3 apareceu na ${cont_pos_3} posição </br>
+                         Não houveram valores pares na amostra </br>
+                         ${vetor_pos_3}`
+          } if(vetor_pares.length == 0 && vetor_pos_3.length == 0 ){
+            res.innerHTML = `Os números adicionados foram ${vetor}</br>
+                         O número 9 apareceu ${cont_9} vezes </br>
+                         O número 3 não apareceu na amostra </br>
+                         Não houveram valores pares na amostra </br>
+                         ${vetor_pos_3}`
+          }if(vetor_pares.length != 0 && vetor_pos_3.length != 0){
+            res.innerHTML = `Os números adicionados foram ${vetor}</br>
+                         O número 9 apareceu ${cont_9} vezes </br>
+                         O primeiro número 3 apareceu na ${cont_pos_3}ª posição </br>
+                         Os valores pares foram: ${vetor_pares} </br>`
+          }
+          
+       
+          
+        
+      
+    </script>
+</body>
+
+</html>

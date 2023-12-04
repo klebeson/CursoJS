@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="moedas"></div>
+    <script>
+        fetch('https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/Moedas?%24format=json')
+        .then(data => data.json())
+        .then(json => {
+            moedas = json.value
+            listaMoedas = ""
+            for(idx in moedas){
+                listaMoedas = listaMoedas + "<div style='border: 1px solid gray; margin: 0.5em; padding: 0.2em; background-color: lightgray;'><p>" + 
+                    moedas[idx].nomeFormatado + "</p>" + "<p>" + moedas[idx].simbolo + "</p></div>"
+            }
+            document.getElementById('moedas').innerHTML = listaMoedas
+        })
+    </script>
+</body>
+</html>

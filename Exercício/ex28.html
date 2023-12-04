@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Adivinhação v.1.0</title>
+</head>
+
+<body>
+    <p>Vou pensar em um número entre 0 e 5 tenta adivinhar</p> <br>
+    <input type="number" id="n">
+    <input type="button" value="Adivinhar" onclick="adivinhar()">
+    <div id="res"></div>
+
+    <script>
+        function adivinhar() {
+            let n = Number(document.getElementById('n').value)
+            let res = document.getElementById('res')
+            var sorteado = sorteio()
+
+
+
+            if (sorteado === n) {
+                res.innerHTML = `Você Ganhou digitando ${n}!!! eu pensei em ${sorteado}`
+            } else if (sorteado !== n) {
+                res.innerHTML = `Você perdeu digitando ${n} eu pensei em ${sorteado}`
+            } if (n > 5 || n < 0) {
+                alert("Digite um número entre 0 e 5")
+            }
+        }
+
+        function sorteio() {
+            return Math.floor(Math.random() * 6);
+        }
+
+    </script>
+</body>
+
+</html>

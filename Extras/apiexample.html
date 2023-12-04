@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="load()">Carregar</button>
+    <button onclick="loadBTC()">Carregar BTC</button>
+    <div id="pkmn"></div>
+    <div id="btc"></div>
+    <!--iframe id="frm" src="https://dio.me" width="800" height="800" frameborder="0"></iframe-->
+</body>
+
+<script>
+    function load() {
+        fetch('https://pokeapi.co/api/v2/pokemon').then(data => data.json()).then(json => {
+            container = document.getElementById('pkmn')
+            content = ""
+            pkmns = json.results
+            for (index in pkmns) {
+                content = content.concat(`<p style="color:green">${pkmns[index].name}</p>`)
+                console.log(pkmns[index].url)
+            }
+            container.innerHTML = content
+        })
+    }
+    function loadBTC() {
+        fetch('https://www.mercadobitcoin.net/api/BTC/ticker/').then(data => data.json()).then(json => {
+            container = document.getElementById('btc')
+            let btc = json.ticker
+            container.innerHTML = "<p style='color: blue'>compra: " + btc.buy + "</p><p style='color:red'>venda: " + btc.sell + "</p>"
+            console.log('Recarregando BTC')
+        })
+    }
+    setInterval(loadBTC,5000)
+    /*
+    setInterval(()=>{
+        document.getElementById("frm").contentWindow.location.reload(true)
+    },10000)
+    */
+</script>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seno, Cosseno e Tangente</title>
+</head>
+<body>
+    <input type="number" id="ang">
+    <input type="button" value="calcular" onclick="calcular()">
+    <div id="res">...</div>
+
+    <script>
+        function calcular(){
+            var ang =Number(document.getElementById('ang').value)
+            var res = document.getElementById('res')
+            var sin = Math.sin(ang * (3.14/180))
+            var cos = Math.cos(ang * (3.14/180))
+            var tan = Math.tan(ang * (3.14/180))
+
+            res.innerHTML= " "
+            res.innerHTML+=`O seno de ${ang} é ${sin}</br>`
+            res.innerHTML+=`O cosseno de ${ang} é ${cos}</br>`
+            res.innerHTML+=`A tangente de ${ang} é ${tan}</br>`
+
+        }
+    </script>
+</body>
+</html>

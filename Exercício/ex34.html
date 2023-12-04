@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aumentos múltiplos</title>
+</head>
+
+<body>
+    Digite o salário do funcionário <input type="number" id="sal">
+    <input type="button" value="calcular" onclick="calcular()">
+    <script>
+
+        function calcular() {
+            let sal = Number(document.getElementById('sal').value)
+            let aumento = 0
+
+            if (sal < 1250) {
+                aumento = sal + (sal * 0.15)
+                alert(`Parabéns você ganhou um aumento de ${sal * 0.15} e seu salário passou de ${sal} para ${aumento}`)
+            } else {
+                aumento = sal + (sal * 0.10)
+                alert(`Parabéns você ganhou um aumento de ${sal * 0.10} e seu salário passou de ${sal} para ${aumento}`)
+            }
+        }
+    </script>
+
+</body>
+
+</html>

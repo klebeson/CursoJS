@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiro e último nome de uma pessoa</title>
+</head>
+
+<body>
+    Digite seu nome: <input type="text" id="nome">
+    <input type="button" value="Verificar" onclick="verificar()">
+    <div id="res"></div>
+
+    <script>
+        function verificar() {
+            let nome = document.getElementById('nome').value.toUpperCase().trim()
+            let res = document.getElementById('res')
+            let pnome = nome.split(" ", 1)
+            let teste = nome.lastIndexOf(" ")
+
+
+
+            res.innerHTML = `Seu primeiro nome é ${pnome} </br>`
+            res.innerHTML += `Seu último nome é ${nome.substr(teste)} `
+
+        }
+    </script>
+</body>
+
+</html>

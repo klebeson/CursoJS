@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custo de Viagem</title>
+</head>
+
+<body>
+    <input type="number" id="dis">
+    <input type="button" value="calcular" onclick="calcular()">
+    <div id="res">...</div>
+
+    <script>
+        function calcular() {
+            var dis = Number(document.getElementById('dis').value)
+            var res = document.getElementById('res')
+
+            if (dis < 200) {
+                let custo = dis * 0.50
+                res.innerHTML = `Você rodou ${dis}KM e pagára R$ 0,50 por KM totalizando R$${custo}`
+            } else {
+                let custo = dis * 0.45
+                res.innerHTML = `Você rodou ${dis}KM e pagára R$ 0,45 por KM totalizando R$${custo}`
+            }
+        }
+    </script>
+</body>
+
+</html>

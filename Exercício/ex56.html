@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analisador Completo</title>
+</head>
+
+<body>
+    Nome: <input type="text" id="nome"> <br><br>
+    Idade: <input type="number" id="idade"><br><br>
+    Sexo [M/F]:<input type="text" id="sexo"> <br><br>
+    <input type="button" value="adicionar" onclick="adicionar()">
+    <input type="button" value="verificar" onclick="verificar()">
+    <div id="res"></div>
+
+    <script>
+        let res = document.querySelector('div#res')
+        let pessoas = []
+
+        function verificar() {
+            let pessoaIdentificada = {
+                nome: "", 
+                idade: 0,
+                eMaiorDeIdade: function (){
+                    return (this.idade >= 18)
+                }
+            }
+            for(idx in pessoas){
+                if(pessoaIdentificada.idade < pessoas[idx].idade){
+                    pessoaIdentificada.idade = pessoas[idx].idade
+                    pessoaIdentificada.nome = pessoas[idx].nome
+                }
+            }
+            res.innerHTML = "A maior idade é " + 
+            pessoaIdentificada.idade + " anos e é de " + 
+            pessoaIdentificada.nome + " e a pessoa é maior de idade? " + pessoaIdentificada.eMaiorDeIdade()
+        }
+
+        function adicionar() {
+
+            let pessoa = {}
+            pessoa.nome = document.getElementById('nome').value
+            pessoa.idade = Number(document.getElementById('idade').value)
+            pessoa.sexo = document.getElementById('sexo').value
+
+            document.getElementById('nome').value = ""
+            document.getElementById('idade').value = ""
+            document.getElementById('sexo').value = ""
+
+            pessoas.push(pessoa)
+            
+        }
+    </script>
+
+
+</body>
+
+</html>

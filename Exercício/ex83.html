@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validando expressões matemáticas</title>
+</head>
+<body>
+   Digite sua expressão: <input type="text" id="exp">
+   <input type="button" value="verificar" onclick="verificar()">
+   <div id="res"></div>
+<script>
+    function verificar(){
+    let exp = document.querySelector('input#exp').value
+    let res = document.getElementById('res')
+    let vet = exp.split('')
+    let vet_parenteses = []
+    let cont = 0
+   
+for(idx in vet){
+    if(vet[idx] == "(" || vet[idx] == ")"){
+        cont++
+    }
+}
+    if(cont % 2 == 0){
+        res.innerHTML = `Sua expressão é válida`
+    }else{
+        res.innerHTML = `Sua expressão </strong>NÃO</strong> é válida`
+    }
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aluguel de Carros</title>
+</head>
+<body>
+    Quantos dias alugados <input type="number" id="dias"> <br><br>
+    Quantos KM rodados <input type="number" id="km">
+    <input type="button" value="calcular" onclick="calcular()">
+    <div id="res"></div>
+
+    <script>
+        function calcular(){
+            var res = document.getElementById('res')
+            var d = Number(document.getElementById('dias').value)
+            var km = Number(document.getElementById('km').value)
+            var preco = (d*60) + (km*0.15)
+            res.innerHTML = `O carro foi alugado por ${d} dias, rodou ${km}km o valor a pagar é R$${preco}`
+
+
+        }
+    </script>
+
+
+
+    
+</body>
+</html>

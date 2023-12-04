@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Adivinhação v.2.0</title>
+</head>
+
+<body>
+    <p>Vou pensar em um número entre 0 e 10 tenta adivinhar</p> <br>
+    <input type="number" id="n">
+    <input type="button" value="Reinicar" onclick="Reinicar()"><br><br>
+    <input type="button" value="Adivinhar" onclick="adivinhar()">
+    <div id="res"></div>
+    
+
+    <script>
+
+        let tentativa = 0
+        let sorteado = Math.floor(Math.random() * 11)
+
+        function adivinhar() {
+
+            let n = Number(document.getElementById('n').value)
+            let res = document.getElementById('res')
+            
+
+            tentativa++
+
+
+            if (sorteado !== n) {
+
+                if (sorteado > n) {
+                    res.innerHTML = "Mais....tente outra vez"
+
+                } else if (sorteado < n) {
+                    res.innerHTML = "Menos....tente outra vez"
+                }
+
+            } else {
+                
+                alert(`Você acertou com ${tentativa} tentativas....Parebéns`)
+            }
+
+        }
+
+        function Reinicar() {
+
+            tentativa = 0
+            document.getElementById('n').value = ''
+            res.innerHTML =''
+            
+           
+        }
+
+    </script>
+</body>
+
+</html>

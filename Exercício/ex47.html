@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contagem de pares</title>
+</head>
+
+<body>
+   Digite qual o limite da contagem <input type="number" id="n">
+   <input type="button" value="iniciar" onclick="iniciar()">
+    <div id="res"></div>
+
+
+    <script>
+
+         function iniciar() {
+            var n = Number(document.getElementById('n').value)
+            let tes = ""
+            let par = []
+
+            for (var contador = 0; contador <= n; contador++) {
+
+                tes += `${contador} </br>`
+
+                if (contador % 2 == 0) {
+                    par.push(contador)
+                }
+                res.innerHTML = par
+            }
+
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Índice de Massa Corporal</title>
+</head>
+
+<body>
+    Qual é o seu peso (Kg) <input type="number" id="peso"> <br><br>
+    Qual é a sua altura (m) <input type="number" id="altura">
+    <input type="button" value="calcular" onclick="calcular()">
+    <div id="res">....</div>
+
+    <script>
+        function calcular() {
+
+            let peso = Number(document.getElementById('peso').value)
+            let altura = Number(document.getElementById('altura').value)
+            let res = document.getElementById('res')
+            imc = peso / (Math.pow(altura, 2))
+
+            res.innerHTML = `${imc.toFixed(2)}`
+            if (imc < 18.5) {
+                res.innerHTML = `Seu IMC é ${imc.toFixed(2)} </br>`
+                res.innerHTML += `ABAIXO DO PESO`
+
+            } else if (imc >= 18.5 && imc <= 25) {
+                res.innerHTML = `Seu IMC é ${imc.toFixed(2)} </br>`
+                res.innerHTML += `PESO IDEAL`
+            } else if (imc > 25 && imc <= 30) {
+                res.innerHTML = `Seu IMC é ${imc.toFixed(2)} </br>`
+                res.innerHTML += `SOBREPESO`
+            } else if (imc > 30 && imc <= 40) {
+                res.innerHTML = `Seu IMC é ${imc.toFixed(2)} </br>`
+                res.innerHTML += `OBESIDA`
+            } else {
+                res.innerHTML = `Seu IMC é ${imc.toFixed(2)} </br>`
+                res.innerHTML += `OBESIDADE MÓRBIDA`
+            }
+        }
+    </script>
+</body>
+
+</html>

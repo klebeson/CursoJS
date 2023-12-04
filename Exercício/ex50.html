@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soma dos pares</title>
+</head>
+
+<body>
+    <input type="number" id="n">
+    <input type="button" value="Adicionar" onclick="adicionar()"><br><br>
+    <input type="button" value="somar" onclick="somar()">
+    <div id="res"></div>
+
+
+    <script>
+        let n1 = document.getElementById('n')
+        let res = document.getElementById('res')
+        let valores = []
+        let soma = 0
+
+
+
+        function somar() {
+            if (valores.length == 6) {
+                for (let pos in valores) {
+
+                    if (valores[pos] % 2 == 0) {
+                        soma += valores[pos]
+                    }
+                }
+
+                res.innerHTML += soma
+            } else {
+                alert('Continue adicionando valores')
+            }
+        }
+
+        function adicionar() {
+            if (valores.length < 6) {
+
+                valores.push(Number(n.value))
+                res.innerHTML = ""
+                res.innerHTML += `${valores}</br>`
+            }else{
+                alert('Número máximo de valores adicionados  Clique em SOMAR!!')
+            }
+
+
+
+            /*if (valores.length <= 6) {
+                valores.push(n1)
+                res.innerHTML = valores
+            }else{
+                alert("Número máximo de valores adicionados")
+            }*/
+
+        }
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparando Números</title>
+
+    Digite o primeiro número: <input type="number" id="n1"><br><br>
+    Digite o primeiro número: <input type="number" id="n2"><br><br>
+    <input type="button" value="verificar" onclick="verificar()">
+    <div id="res"></div>
+
+    <script>
+        function verificar() {
+            let n1 = Number(document.getElementById('n1').value)
+            let n2 = Number(document.getElementById('n2').value)
+            let res = document.getElementById('res')
+
+            if(n1>n2){
+                res.innerHTML = `O primeiro número é maior que o segundo`
+            }else if(n1<n2){
+                res.innerHTML = `O segundo número é maior que o primeiro`
+            }else{
+                res.innerHTML = `Os números são iguais`
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

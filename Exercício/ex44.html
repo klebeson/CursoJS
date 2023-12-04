@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciador de Pagamentos</title>
+</head>
+
+<body>
+    Digite o valor da compra: <input type="number" id="valor"><br><br>
+    Digite a opção desejada abaixo: <br><br>
+    [1] - À vista Dinheiro/Cheque <br>
+    [2] - À vista Cartão <br>
+    [3] - Parcelado Cartão <br>
+    <input type="number" id="opcao">
+    <input type="button" value="verificar" onclick="verificar()">
+    <div id="res"></div>
+
+    <script>
+        function verificar() {
+            let opcao = Number(document.querySelector('#opcao').value)
+            let valor = Number(document.querySelector('#valor').value)
+            let res = document.getElementById('res')
+
+            switch (opcao) {
+                case 1:
+                    let desconto = valor * 0.1
+                    res.innerHTML = `Pagamento à vista </br>`
+                    res.innerHTML += `Valor a pagar com 10% de desconto R$${valor - desconto}`
+                    break
+                case 2:
+                    let desconto2 = valor * 0.05
+                    res.innerHTML = `Pagamento  cartão à vista </br>`
+                    res.innerHTML += `Valor a pagar com 5% de desconto R$${valor - desconto2}`
+                    break
+                case 3:
+                    var vezes = prompt(`Digite de quantas vezes será a compra`)
+                    var juros = valor * 0.2
+                    if (vezes <= 2) {
+                        res.innerHTML = `Pagamento  parcelado cartão até 2X </br>`
+                        res.innerHTML += `Valor a pagar R$${valor}`
+                    } else {
+                        res.innerHTML = `Pagamento  parcelado cartão mais que 2X </br>`
+                        res.innerHTML += `Valor a pagar R$${valor + juros}`
+                    }
+                    res.innerHTML +="</br>"
+                    res.innerHTML += `A parcela será de R$${(valor + juros) / vezes}`
+                    break
+                default:
+                    alert(`Digite uma opçao válida`)
+
+
+            }
+        }
+
+
+
+
+
+    </script>
+</body>
+
+</html>

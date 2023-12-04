@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sequência de fibonacci V1.0</title>
+   
+</head>
+
+<body>
+    Exibir até o termo: <input id="numero" type="number"> <br />
+    <button onclick="fibonacci()">Exibir</button><br />
+    <div id='resposta'></div>
+</body>
+
+</html>
+<script>
+    function fibonacci() {
+        var termo = parseInt(document.getElementById('numero').value);
+        var resposta = document.getElementById('resposta');
+        var t1 = 0
+        var t2 = 1
+        var numero = 0;
+        var tes = ''
+
+        resposta.innerHTML = `${0}</br>${1}</br>`
+        if (termo < 3)
+            resposta.innerHTML`${0}</br>${1}`
+        else
+            for (let count = 3; count <= termo; count++) {
+               t3 = t1 + t2
+               t1 = t2
+               t2 = t3
+            
+               resposta.innerHTML += `${t3}</br>`
+              
+            }
+
+
+    }
+    </script>

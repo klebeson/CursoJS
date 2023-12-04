@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maior e menor valores</title>
+</head>
+<body>
+    <input type="number" id="n1"><br><br>
+    <input type="number" id="n2"><br><br>
+    <input type="number" id="n3"><br><br>
+    <input type="button" value="calcular" onclick="calcular()">
+    <div id="res"></div>
+
+    <script>
+    function calcular(){
+        let n1 = Number(document.getElementById('n1').value)
+        let n2 = Number(document.getElementById('n2').value)
+        let n3 = Number(document.getElementById('n3').value)
+        let res = document.getElementById('res')
+        menor = n1
+        maior = n1
+
+
+        if (n2 < n1 && n2 < n3) {
+                menor = n2
+                res.innerHTML = menor
+            } else if (n3 < n1 && n3 < n2) {
+                menor = n3
+                
+            }
+
+            if (n2 > n1 && n2 > n3) {
+                maior = n2
+                res.innerHTML = maior
+            } else if (n3 > n1 && n3 > n2) {
+                maior = n3
+                
+            }
+            res.innerHTML = `O maior Número é o ${maior}</br>`
+            res.innerHTML += `O menor Número é o ${menor}</br>`
+    }
+    </script>
+</body>
+</html>

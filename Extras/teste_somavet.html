@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<input type="number" id="num">
+<input type="button" value="Adicionar" onclick="adicionar()"><br></br>
+<input type="button" value="somar" onclick="somar()">
+<div id="res"></div>
+<div id="res2"></div>
+
+<body>
+    <script>
+        let num = document.querySelector('input#num')
+        let res = document.querySelector('div#res')
+        let res2 = document.querySelector('div#res2')
+        let vet = []
+        var soma = 0
+
+
+        function adicionar() {
+            soma = 0
+            vet.push(Number(num.value))
+            document.querySelector('input#num').value = ''
+            res.innerHTML = vet
+
+        }
+
+        function somar() {
+            for(idx in vet){
+               soma +=vet[idx]
+               res2.innerHTML = soma
+            }
+        }
+
+    </script>
+</body>
+
+</html>

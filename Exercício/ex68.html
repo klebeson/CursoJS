@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo do Par ou Ímpar</title>
+</head>
+
+<body>
+   Digite um valor: <input type="number" id="n"> </br></br>
+    Par ou ímpar[P/I]: <input type="text" id="escolha">
+    <input type="button" value="teste" onclick="teste()">
+    <div id="res"></div>
+
+    <script>
+        function teste() {
+            let escolha = document.getElementById('escolha').value.toUpperCase()
+            let n = Number(document.getElementById("n").value)
+            // let res = document.getElementById("res")
+            let pc = Math.floor(Math.random() * 10)
+            let jogo = n + pc
+          
+
+        
+            if (jogo % 2 == 0 && escolha == "P" ) {
+                alert(`Você jogou ${n} e o computador ${pc}. o Total deu ${jogo} PAR!! Você ganhou`)
+
+            }else if(jogo % 2 != 0 && escolha == "I"){
+                alert(`Você jogou ${n} e o computador ${pc}. o Total deu ${jogo} ÍMPAR!! Você ganhou`)
+            }
+             else {
+                alert(`VOCÊ PERDEU`)
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>

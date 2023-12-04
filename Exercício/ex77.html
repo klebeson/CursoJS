@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contando vogais em Tupla</title>
+</head>
+<body>
+   Digite uma palavra: <input type="text" id="palavra">
+   <input type="button" value="iniciar" onclick="iniciar()">
+   <div id="res"></div>
+
+   <script>
+    function iniciar(){
+    let res = document.querySelector('div#res')
+    let palavra = document.getElementById('palavra').value
+
+    let vet = palavra.split('')
+    let vogais = []
+
+    for(idx in vet){
+       
+        if(vet[idx] == "a" || vet[idx] == "e" || vet[idx] == "i" || vet[idx] == "o" ||vet[idx] == "u" )
+        vogais.push(vet[idx])
+    }
+res.innerHTML += `Na palavra ${palavra} temos  ${vogais} </br>`
+    }
+   </script>
+</body>
+</html>

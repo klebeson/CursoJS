@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pintando Parede</title>
+</head>
+<body>
+    Digite a Largura da sua parede <input type="number" id="largura"> <br> <br>
+
+    Digite a Altura da parede <input type="number" id="altura">
+    <input type="button" value="calcular" onclick="calcular()">
+    <div id="res">...</div>
+    <script>
+        function calcular(){
+            var l = Number(document.getElementById('largura').value)
+            var h = Number(document.getElementById('altura').value)
+            var a = Number(l*h)
+            var tinta = a / 2
+            var res = document.getElementById('res')
+            res.innerHTML = ''
+            res.innerHTML += `<p>Largura da parede: ${l}<p>`
+            res.innerHTML += `<p>Altura da parede ${h}<p>`
+            res.innerHTML += `<p>Sua parede tem a dimensão de ${l}m2 X ${a}m2 e sua área é de ${a}m2<p>`
+            res.innerHTML += `<p>Para pintar essa parede, você precisará de ${tinta}l de tinta<p>`
+
+            }
+
+
+
+    </script>
+</body>
+</html>

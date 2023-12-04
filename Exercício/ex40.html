@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aquele clássico da Média</title>
+</head>
+
+<body>
+    Digite a primeira nota: <input type="number" id="n1"><br><br>
+    Digite a segunda nota: <input type="number" id="n2">
+    <input type="button" value="calcular" onclick="calcular()">
+    <div id="res"></div>
+    <script>
+        function calcular() {
+            let n1 = Number(document.getElementById('n1').value)
+            let n2 = Number(document.getElementById('n2').value)
+            let res = document.getElementById('res')
+
+            let media = (n1 + n2) / 2
+
+            if (media >= 6) {
+                res.innerHTML = `Com as notas ${n1} e ${n2} o aluno teve media ${media}</br>`
+                res.innerHTML += `APROVADO`
+            } else if (media < 6 && media >= 5) {
+                res.innerHTML = `Com as notas ${n1} e ${n2} o aluno teve media ${media}</br>`
+                res.innerHTML += `RECUPERAÇÃO`
+            }else{
+                res.innerHTML = `Com as notas ${n1} e ${n2} o aluno teve media ${media}</br>`
+                res.innerHTML += `REPROVADO`
+            }
+        }
+    </script>
+</body>
+
+</html>

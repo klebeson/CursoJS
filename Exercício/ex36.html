@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprovando Empréstimo</title>
+</head>
+
+<body>
+    Digite o valor da casa: <input type="number" id="vcasa"> <br><br>
+    Digite o salário do comprador <input type="number" id="sal"><br><br>
+    Digite em quantos anos será o parcelamento: <input type="number" id="anos"><br><br>
+    <div id="res"></div>
+    <input type="button" value="calcular" onclick="calcular()">
+
+    <script>
+        function calcular() {
+            let vcasa = Number(document.getElementById('vcasa').value)
+            let sal = Number(document.getElementById('sal').value)
+            let anos = Number(document.getElementById('anos').value)
+            let res = document.getElementById('res')
+            let prest = vcasa / (anos * 12)
+
+            if (prest > (sal * 0.3)){
+                res.innerHTML = `Para pagar uma casa de ${vcasa} em ${anos} anos a prestação será de ${prest}</br> EMPRÉSTIMO NEGADO`
+            }else{
+                res.innerHTML = `Para pagar uma casa de ${vcasa} em ${anos}  anos a prestação será de ${prest}</br> EMPRÉSTIMO CONCEDIDO`
+            }
+    }
+
+    </script>
+
+</body>
+
+</html>

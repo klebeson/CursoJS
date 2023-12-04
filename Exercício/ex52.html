@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Números primos</title>
+</head>
+
+<body>
+    Digite um número: <input type="number" id="n">
+    <input type="button" value="verificar" onclick="verificar()">
+    <input type="button" value="Limpar" onclick="limpar()">
+
+    <div id="res"></div>
+    <div id="res2"></div>
+    <div id="res3"></div>
+
+
+    <script>
+        function verificar() {
+
+            let n = Number(document.getElementById('n').value)
+            let res = document.querySelector('div#res')
+            let res2 = document.querySelector('div#res2')
+            let res3 = document.querySelector('div#res3')
+            let tes = ""
+            let tot = 0
+
+            for (let cont = 1; cont <= n; cont++) {
+
+
+                if (n % cont == 0) {
+                    tot++
+                    res3.innerHTML += `O número ${n} é divisível por: ${cont}</br>  `
+
+                }
+               
+            }
+            if (tot == 2) {
+                    res2.innerHTML += `Número Primo </br>`
+                } else {
+                    res2.innerHTML += `Número NÃO é Primo </br>`
+                }
+                res2.innerHTML += `O número ${n} foi divisível ${tot} vezes </br>`
+        }
+
+        function limpar() {
+
+            res.innerHTML = ""
+            res2.innerHTML = ""
+            res3.innerHTML = ""
+        }
+
+
+
+
+
+    </script>
+</body>
+
+</html>
